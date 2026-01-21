@@ -27,9 +27,9 @@
                         }
                     },
                     fontFamily: {
-                        // 本文・全体用 (Jost -> Noto Sans JP -> sans-serif)
-                        sans: ['"Jost"', '"Noto Sans JP"', 'sans-serif'],
-                        // 見出し・ブランド用 (YDW-Aosagi -> Jost -> Noto Sans JP -> sans-serif)
+                        // 本文・全体用: 英数はJost、日本語はYDW-Aosagiを優先
+                        sans: ['"Jost"', '"YDW-Aosagi"', '"Noto Sans JP"', 'sans-serif'],
+                        // 見出し・ブランド用: 英数はJost、日本語はYDW-Aosagiを優先（またはYDW-Aosagi最優先）
                         brand: ['"YDW-Aosagi"', '"Jost"', '"Noto Sans JP"', 'sans-serif'],
                     }
                 }
@@ -53,8 +53,8 @@
             background-color: #1a1a1a;
             color: #FFFFFF; 
             line-height: 1.8;
-            /* Tailwindのfont-sansが適用されますが、念のため明示 */
-            font-family: "Jost", "Noto Sans JP", sans-serif;
+            /* Tailwindのfont-sansが適用されますが、念のため明示（英数Jost -> 日本語YDW-Aosagi） */
+            font-family: "Jost", "YDW-Aosagi", "Noto Sans JP", sans-serif;
         }
         
         /* 見出し用ユーティリティクラス補完（必要に応じて） */
