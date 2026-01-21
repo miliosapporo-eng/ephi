@@ -1,1 +1,352 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eφ usability labo Service</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Jost (Latin) & Noto Sans JP (Japanese) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500&family=Noto+Sans+JP:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        milio: {
+                            brand: '#ccb66c',  // アクセント（ゴールド系）
+                            black: '#1a1a1a',  // 背景色（ダークグレー/黒）
+                            white: '#FFFFFF',  // テキスト
+                            gray: '#737373',   // サブテキスト
+                            border: '#E5E5E5', // (今回はあまり使わないか、薄く使う)
+                            light: '#fcfaf2',  // (今回は使わない)
+                            darkgray: '#2a2a2a' // カード背景用など
+                        }
+                    },
+                    fontFamily: {
+                        // 本文・全体用 (Jost -> Noto Sans JP -> sans-serif)
+                        sans: ['"Jost"', '"Noto Sans JP"', 'sans-serif'],
+                        // 見出し・ブランド用 (YDW-Aosagi -> Jost -> Noto Sans JP -> sans-serif)
+                        brand: ['"YDW-Aosagi"', '"Jost"', '"Noto Sans JP"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* YDW-Aosagi のローカルフォント定義 */
+        @font-face {
+            font-family: 'YDW-Aosagi';
+            src: url('YDWaosagi.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
 
+        body {
+            /* ベースカラーの設定 */
+            background-color: #1a1a1a;
+            color: #FFFFFF; 
+            line-height: 1.8;
+            /* Tailwindのfont-sansが適用されますが、念のため明示 */
+            font-family: "Jost", "Noto Sans JP", sans-serif;
+        }
+        
+        /* 見出し用ユーティリティクラス補完（必要に応じて） */
+        .font-brand {
+            font-family: "YDW-Aosagi", "Jost", "Noto Sans JP", sans-serif;
+        }
+
+        /* モーダル表示時のスクロール抑制 */
+        body.modal-open {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-milio-black text-white flex flex-col min-h-screen font-sans">
+
+    <!-- Header -->
+    <header class="w-full border-b border-gray-800 py-4 fixed top-0 bg-milio-black/95 backdrop-blur-sm z-50">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <!-- ロゴに font-brand を適用 -->
+            <h1 class="text-xl font-medium tracking-wide text-white font-brand">
+                <span class="font-bold text-milio-brand">eφ</span> usability labo
+            </h1>
+            <nav>
+                <ul class="flex space-x-8 text-sm font-light text-gray-300 font-sans">
+                    <li><a href="#concept" class="hover:text-milio-brand transition-colors">Concept</a></li>
+                    <li><a href="#services" class="hover:text-milio-brand transition-colors">Services</a></li>
+                    <li><a href="#contact" class="hover:text-milio-brand transition-colors">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-20">
+
+        <!-- Hero Section -->
+        <section class="bg-milio-black py-24 md:py-32 border-b border-gray-800">
+            <div class="container mx-auto px-6 text-center">
+                <!-- キャッチコピーに font-brand を適用 -->
+                <h2 class="text-3xl md:text-6xl font-light mb-8 tracking-tight text-milio-brand font-brand">strength in absence</h2>
+                <p class="text-sm md:text-base text-gray-300 max-w-2xl mx-auto leading-loose font-sans">
+                    私たちは「余白」にこそ着目すべき源があると考えます。<br>
+                    空虚の中にある一閃を拾うことで、全貌の再評価を行います。<br>
+                    <span class="font-brand text-milio-brand">eφ</span>（イー・ファイ）は人間中心設計に基づいて「気付き」を提供する<br>観察設計改善サービスです。
+                </p>
+            </div>
+        </section>
+
+        <!-- Services Section (Plans Included) -->
+        <section id="services" class="py-24 bg-milio-black relative">
+            <div class="container mx-auto px-6">
+                
+                <!-- === Plans Part (Moved to Top) === -->
+                
+                <!-- Introduction Message -->
+                <div class="text-center mb-20">
+                    <p class="text-lg md:text-xl text-white font-light leading-relaxed tracking-wide font-sans">
+                        出会いの目前で、商談の途中で、成約手前で...<br class="hidden md:inline">
+                        結ばれなかった「未来の顧客」を見つけ出し、<br class="hidden md:inline">
+                        不満のもとであった問題点をデザインし直します。
+                    </p>
+                </div>
+
+                <!-- Plans Heading -->
+                <h3 class="text-3xl font-light text-center mb-16 text-white font-brand">Plans</h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32 border-b border-gray-800 pb-24">
+                    <!-- TRIAL -->
+                    <div class="flex flex-col border border-gray-700 p-8 hover:border-milio-brand transition-colors duration-300 group">
+                        <div class="mb-6">
+                            <span class="text-xs font-bold tracking-widest text-milio-brand mb-2 block font-brand">DAY / TRIAL</span>
+                            <h4 class="text-xl font-medium text-white group-hover:text-milio-brand transition-colors font-brand">導入プラン</h4>
+                        </div>
+                        <p class="text-sm text-gray-400 mb-8 flex-grow font-sans">
+                            まずは率直な意見を聞きたい方へ。<br>
+                            ヒアリングと検証方法の提案。
+                        </p>
+                        <div class="pt-6 border-t border-gray-800">
+                            <p class="text-2xl font-light text-white font-brand">¥20,000 <span class="text-sm text-gray-500 font-sans">/ hour</span></p>
+                        </div>
+                    </div>
+
+                    <!-- STANDARD -->
+                    <div class="flex flex-col border border-milio-brand p-8 bg-milio-black relative transform md:-translate-y-4 shadow-lg shadow-black/50">
+                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                            <span class="bg-milio-brand text-milio-black text-xs px-3 py-1 font-bold tracking-widest uppercase font-brand">Recommended</span>
+                        </div>
+                        <div class="mb-6">
+                            <span class="text-xs font-bold tracking-widest text-milio-brand mb-2 block font-brand">WEEK / STANDARD</span>
+                            <h4 class="text-xl font-medium text-white font-brand">いったんプラン</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 mb-8 flex-grow font-sans">
+                            仮説を立て、資産となる<br>
+                            ペルソナ・シナリオを構築。
+                        </p>
+                        <div class="pt-6 border-t border-gray-700">
+                            <p class="text-2xl font-light text-white font-brand">¥150,000 <span class="text-sm text-gray-500 font-sans">/ case</span></p>
+                        </div>
+                    </div>
+
+                    <!-- PRO -->
+                    <div class="flex flex-col border border-gray-700 p-8 hover:border-milio-brand transition-colors duration-300 group">
+                        <div class="mb-6">
+                            <span class="text-xs font-bold tracking-widest text-milio-brand mb-2 block font-brand">MONTH / PRO</span>
+                            <h4 class="text-xl font-medium text-white group-hover:text-milio-brand transition-colors font-brand">周回プラン</h4>
+                        </div>
+                        <p class="text-sm text-gray-400 mb-8 flex-grow font-sans">
+                            ほんかくてき！<br>
+                            データ収集・検証・改善のサイクル。
+                        </p>
+                        <div class="pt-6 border-t border-gray-800">
+                            <p class="text-2xl font-light text-white font-brand">¥500,000~ <span class="text-sm text-gray-500 font-sans">/ term</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- === Services Details Part === -->
+                
+                <!-- Services Heading -->
+                <h3 class="text-3xl font-light text-center mb-16 text-white font-brand">Services</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Service 1 -->
+                    <div class="group bg-milio-black p-8 border border-gray-700 hover:border-milio-brand transition-colors duration-300">
+                        <div class="mb-4 text-milio-brand">
+                            <i data-lucide="search" class="w-8 h-8"></i>
+                        </div>
+                        <h4 class="text-xl font-medium mb-3 text-white group-hover:text-milio-brand transition-colors font-brand">Usability Testing</h4>
+                        <p class="text-sm text-gray-400 font-sans">
+                            実際のユーザーによる操作観察調査。行動ログと発話（プロトコル）から、潜在的な課題とエラー要因を特定します。
+                        </p>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="group bg-milio-black p-8 border border-gray-700 hover:border-milio-brand transition-colors duration-300">
+                        <div class="mb-4 text-milio-brand">
+                            <i data-lucide="monitor-smartphone" class="w-8 h-8"></i>
+                        </div>
+                        <h4 class="text-xl font-medium mb-3 text-white group-hover:text-milio-brand transition-colors font-brand">UI/UX Expert Review</h4>
+                        <p class="text-sm text-gray-400 font-sans">
+                            ヒューリスティック評価および認知工学の知見に基づき、専門家がインターフェースの問題点を診断します。
+                        </p>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="group bg-milio-black p-8 border border-gray-700 hover:border-milio-brand transition-colors duration-300">
+                        <div class="mb-4 text-milio-brand">
+                            <i data-lucide="bar-chart-2" class="w-8 h-8"></i>
+                        </div>
+                        <h4 class="text-xl font-medium mb-3 text-white group-hover:text-milio-brand transition-colors font-brand">Accessibility Audit</h4>
+                        <p class="text-sm text-gray-400 font-sans">
+                            WCAG（Web Content Accessibility Guidelines）に基づいた適合性試験と、改善ガイドラインの策定を行います。
+                        </p>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="group bg-milio-black p-8 border border-gray-700 hover:border-milio-brand transition-colors duration-300">
+                        <div class="mb-4 text-milio-brand">
+                            <i data-lucide="users" class="w-8 h-8"></i>
+                        </div>
+                        <h4 class="text-xl font-medium mb-3 text-white group-hover:text-milio-brand transition-colors font-brand">Persona Creating</h4>
+                        <p class="text-sm text-gray-400 font-sans">
+                            定性調査データに基づき、ユーザーの行動原理や動機を具体化。製品開発の指針となるペルソナを策定します。
+                        </p>
+                    </div>
+
+                    <!-- Service 5 -->
+                    <div class="group bg-milio-black p-8 border border-gray-700 hover:border-milio-brand transition-colors duration-300">
+                        <div class="mb-4 text-milio-brand">
+                            <i data-lucide="scroll-text" class="w-8 h-8"></i>
+                        </div>
+                        <h4 class="text-xl font-medium mb-3 text-white group-hover:text-milio-brand transition-colors font-brand">Script Writing</h4>
+                        <p class="text-sm text-gray-400 font-sans">
+                            ユーザーの自然な行動を引き出し、深層心理に迫るためのユーザビリティテスト用タスクシナリオとインタビュー台本を設計します。
+                        </p>
+                    </div>
+
+                    <!-- Service 6 -->
+                    <div class="group bg-milio-black p-8 border border-gray-700 hover:border-milio-brand transition-colors duration-300">
+                        <div class="mb-4 text-milio-brand">
+                            <i data-lucide="eye" class="w-8 h-8"></i>
+                        </div>
+                        <h4 class="text-xl font-medium mb-3 text-white group-hover:text-milio-brand transition-colors font-brand">Ethnomethodology</h4>
+                        <p class="text-sm text-gray-400 font-sans">
+                            エスノメソドロジー的アプローチにより、ユーザーが意識せずに行っている日常的な実践や、相互作用の秩序を分析・記述します。
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Area -->
+        <section id="contact" class="py-24 bg-milio-black border-t border-gray-800">
+            <div class="container mx-auto px-6 text-center">
+                <!-- 見出しに font-brand を適用 -->
+                <h3 class="text-3xl font-light mb-8 text-white font-brand">Contact</h3>
+                <p class="text-gray-300 mb-8 text-sm font-sans">
+                    評価・改善のご相談はこちらから承ります。
+                </p>
+                <!-- 
+                    修正: <a>タグから<button>タグへ変更し、onclickでモーダル起動
+                -->
+                <button onclick="openModal()" class="inline-block border border-milio-brand text-milio-brand px-12 py-4 text-sm tracking-wider hover:bg-milio-brand hover:text-milio-black transition-all duration-300 font-medium font-brand cursor-pointer">
+                    お問い合わせ
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-milio-black border-t border-gray-800 py-8">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 font-sans">
+            <div class="mb-4 md:mb-0">
+                &copy; 2026 MiLio, LLC. All rights reserved.
+            </div>
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-milio-brand transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-milio-brand transition-colors">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Structure -->
+    <div id="contactModal" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <!-- Backdrop (背景の黒い幕) -->
+        <div class="fixed inset-0 bg-black/90 transition-opacity backdrop-blur-sm cursor-pointer" onclick="closeModal()"></div>
+
+        <!-- Modal Panel -->
+        <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0 pointer-events-none">
+            <!-- pointer-events-autoで中身だけクリック可能にする -->
+            <div class="pointer-events-auto relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 w-full max-w-4xl h-[85vh] flex flex-col border border-milio-brand">
+                
+                <!-- Header (Close button) -->
+                <div class="bg-milio-black px-4 py-3 flex justify-between items-center border-b border-gray-700 shrink-0">
+                    <h3 class="text-milio-brand font-brand text-lg">Contact Form</h3>
+                    <button type="button" class="text-gray-400 hover:text-milio-brand focus:outline-none transition-colors" onclick="closeModal()">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+
+                <!-- Content (Iframe) -->
+                <div class="flex-grow bg-white relative w-full h-full">
+                    <!-- 
+                        !!! USER ACTION REQUIRED !!!
+                        以下の iframe の src="..." 部分をご自身のGoogleフォームの埋め込みURLに書き換えてください。
+                        Googleフォームの編集画面右上の「送信」ボタン > 「< > (埋め込みHTML)」タブ から取得できます。
+                        width="640" height="xxxx" の部分は無視して、srcの中身のURLだけをコピーして貼り付けてください。
+                     -->
+                    <iframe 
+                        src="https://docs.google.com/forms/d/e/1FAIpQLSfTqlQ1AP_v6Mgds1tFpN_q6wk-CxCglFgj2RopHqPYsR7IUg/viewform?embedded=true" 
+                        width="100%" 
+                        height="100%" 
+                        frameborder="0" 
+                        marginheight="0" 
+                        marginwidth="0"
+                        class="absolute inset-0 w-full h-full"
+                        title="Contact Form"
+                    >読み込んでいます…</iframe>
+                    
+                    <!-- プレースホルダーメッセージ（URLが正しくない場合に背面に見える可能性があります） -->
+                    <div class="absolute inset-0 flex items-center justify-center -z-10 text-gray-400 text-sm">
+                        フォームを読み込んでいます...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        // Modal Functions
+        function openModal() {
+            const modal = document.getElementById('contactModal');
+            modal.classList.remove('hidden');
+            document.body.classList.add('modal-open'); // スクロールロック
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('contactModal');
+            modal.classList.add('hidden');
+            document.body.classList.remove('modal-open'); // スクロールロック解除
+        }
+
+        // ESCキーでモーダルを閉じる
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
