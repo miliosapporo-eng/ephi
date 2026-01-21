@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -71,25 +71,49 @@
         .service-card {
             cursor: pointer;
         }
+
+        /* 固定ヘッダー分のスクロール位置調整 */
+        html {
+            scroll-padding-top: 80px;
+        }
     </style>
 </head>
 <body class="bg-milio-black text-white flex flex-col min-h-screen font-sans">
 
     <!-- Header -->
-    <header class="w-full border-b border-gray-800 py-4 fixed top-0 bg-milio-black/95 backdrop-blur-sm z-50">
-        <div class="container mx-auto px-6 flex justify-between items-center">
+    <header class="w-full border-b border-gray-800 py-4 fixed top-0 bg-milio-black/95 backdrop-blur-sm z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 flex justify-between items-center relative">
             <!-- ロゴをトップページへのリンクに変更 -->
-            <a href="#" class="text-xl font-medium tracking-wide text-white font-brand hover:opacity-80 transition-opacity">
+            <a href="#" class="text-xl font-medium tracking-wide text-white font-brand hover:opacity-80 transition-opacity z-50 relative">
                 <span class="font-bold text-milio-brand">eφ</span> usability lab
             </a>
-            <nav>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:block">
                 <ul class="flex space-x-8 text-sm font-light text-gray-300 font-sans">
                     <li><a href="#about" class="hover:text-milio-brand transition-colors">About</a></li>
                     <li><a href="#persona" class="hover:text-milio-brand transition-colors">Persona</a></li>
                     <li><a href="#services" class="hover:text-milio-brand transition-colors">Services</a></li>
+                    <li><a href="#plans" class="hover:text-milio-brand transition-colors">Plans</a></li>
                     <li><a href="#contact" class="hover:text-milio-brand transition-colors">Contact</a></li>
                 </ul>
             </nav>
+
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button id="mobile-menu-btn" class="md:hidden text-white hover:text-milio-brand focus:outline-none z-50 relative" aria-label="Toggle menu">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu (Hidden by default) -->
+        <div id="mobile-menu" class="fixed inset-0 bg-milio-black/98 z-40 flex flex-col items-center justify-center hidden opacity-0 transition-opacity duration-300">
+            <ul class="flex flex-col space-y-8 text-center text-lg font-light text-white font-brand">
+                <li><a href="#about" class="hover:text-milio-brand transition-colors" onclick="toggleMobileMenu()">About</a></li>
+                <li><a href="#persona" class="hover:text-milio-brand transition-colors" onclick="toggleMobileMenu()">Persona</a></li>
+                <li><a href="#services" class="hover:text-milio-brand transition-colors" onclick="toggleMobileMenu()">Services</a></li>
+                <li><a href="#plans" class="hover:text-milio-brand transition-colors" onclick="toggleMobileMenu()">Plans</a></li>
+                <li><a href="#contact" class="hover:text-milio-brand transition-colors" onclick="toggleMobileMenu()">Contact</a></li>
+            </ul>
         </div>
     </header>
 
@@ -328,7 +352,7 @@
 
                 <!-- === Plans Part === -->
                 
-                <div class="text-center mb-20">
+                <div id="plans" class="text-center mb-20 scroll-mt-28">
                     <span class="text-milio-brand font-brand tracking-widest text-sm block mb-2">PRICING</span>
                     <h3 class="text-3xl text-white font-brand mb-6">Plans</h3>
                 </div>
@@ -682,6 +706,24 @@
 
     <script>
         lucide.createIcons();
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const btn = document.getElementById('mobile-menu-btn');
+            
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                setTimeout(() => menu.classList.remove('opacity-0'), 10);
+                btn.innerHTML = '<i data-lucide="x" class="w-6 h-6"></i>';
+                lucide.createIcons();
+            } else {
+                menu.classList.add('opacity-0');
+                setTimeout(() => menu.classList.add('hidden'), 300);
+                btn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+                lucide.createIcons();
+            }
+        }
 
         // Contact Modal Functions
         function openModal() {
