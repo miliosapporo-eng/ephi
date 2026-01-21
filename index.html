@@ -97,11 +97,12 @@
     <main class="flex-grow pt-20">
 
         <!-- Hero Section -->
-        <section class="bg-milio-black pt-8 pb-24 md:pt-16 md:pb-32 border-b border-gray-800">
+        <section class="bg-milio-black py-24 md:pt-16 md:pb-32 border-b border-gray-800">
             <div class="container mx-auto px-6 text-center">
                 <!-- キャッチコピーを画像に置き換え -->
                 <div class="flex justify-center mb-10">
-                    <img src="images/Ephi-600.png" alt="eφ usability lab" class="max-w-full h-auto w-[35%] object-contain">
+                    <!-- 画像パスを更新: スマホ時は60%、PC時は35%に調整 -->
+                    <img src="images/Ephi-600.png" alt="eφ usability lab" class="max-w-full h-auto w-[60%] md:w-[35%] object-contain">
                 </div>
                 
                 <!-- テキストエリア -->
@@ -393,41 +394,84 @@
                             </tr>
                         </thead>
                         <tbody class="text-gray-300">
+                            <!-- Usability Testing: X, O, O -->
                             <tr class="border-b border-gray-800 hover:bg-gray-900/50 transition-colors">
                                 <td class="py-4 px-4">Usability Testing</td>
-                                <td class="py-4 px-4 text-center">❌</td>
-                                <td class="py-4 px-4 text-center">🔴</td>
-                                <td class="py-4 px-4 text-center">🔴</td>
+                                <td class="py-4 px-4 text-center">
+                                    <div class="flex justify-center"><i data-lucide="x" class="w-4 h-4 text-white"></i></div>
+                                </td>
+                                <td class="py-4 px-4 text-center">
+                                    <div class="flex justify-center"><i data-lucide="circle" class="w-4 h-4 text-milio-brand fill-milio-brand"></i></div>
+                                </td>
+                                <td class="py-4 px-4 text-center">
+                                    <div class="flex justify-center"><i data-lucide="circle" class="w-4 h-4 text-milio-brand fill-milio-brand"></i></div>
+                                </td>
                             </tr>
+                            <!-- UI/UX Expert Review: Triangle, O, O -->
                             <tr class="border-b border-gray-800 hover:bg-gray-900/50 transition-colors">
                                 <td class="py-4 px-4">UI/UX Expert Review</td>
-                                <td class="py-4 px-4 text-center">🔴</td>
-                                <td class="py-4 px-4 text-center">🔴</td>
-                                <td class="py-4 px-4 text-center">🔴</td>
+                                <td class="py-4 px-4 text-center">
+                                    <!-- 導入プランの🔴を🔺に変更 -->
+                                    <div class="flex justify-center"><i data-lucide="triangle" class="w-4 h-4 text-milio-brand fill-milio-brand"></i></div>
+                                </td>
+                                <td class="py-4 px-4 text-center">
+                                    <div class="flex justify-center"><i data-lucide="circle" class="w-4 h-4 text-milio-brand fill-milio-brand"></i></div>
+                                </td>
+                                <td class="py-4 px-4 text-center">
+                                    <div class="flex justify-center"><i data-lucide="circle" class="w-4 h-4 text-milio-brand fill-milio-brand"></i></div>
+                                </td>
                             </tr>
+                            <!-- Persona Creating: X, O, O -->
                             <tr class="border-b border-gray-800 hover:bg-gray-900/50 transition-colors">
                                 <td class="py-4 px-4">Persona Creating</td>
-                                <td class="py-4 px-4 text-center">❌</td>
-                                <td class="py-4 px-4 text-center">🔴</td>
-                                <td class="py-4 px-4 text-center">🔴</td>
+                                <td class="py-4 px-4 text-center">
+                                    <div class="flex justify-center"><i data-lucide="x" class="w-4 h-4 text-white"></i></div>
+                                </td>
+                                <td class="py-4 px-4 text-center">
+                                    <div class="flex justify-center"><i data-lucide="circle" class="w-4 h-4 text-milio-brand fill-milio-brand"></i></div>
+                                </td>
+                                <td class="py-4 px-4 text-center">
+                                    <div class="flex justify-center"><i data-lucide="circle" class="w-4 h-4 text-milio-brand fill-milio-brand"></i></div>
+                                </td>
                             </tr>
+                            <!-- Script Writing: X, O, O -->
                             <tr class="border-b border-gray-800 hover:bg-gray-900/50 transition-colors">
                                 <td class="py-4 px-4">Script Writing</td>
-                                <td class="py-4 px-4 text-center">❌</td>
-                                <td class="py-4 px-4 text-center">🔴</td>
-                                <td class="py-4 px-4 text-center">🔴</td>
+                                <td class="py-4 px-4 text-center">
+                                    <div class="flex justify-center"><i data-lucide="x" class="w-4 h-4 text-white"></i></div>
+                                </td>
+                                <td class="py-4 px-4 text-center">
+                                    <div class="flex justify-center"><i data-lucide="circle" class="w-4 h-4 text-milio-brand fill-milio-brand"></i></div>
+                                </td>
+                                <td class="py-4 px-4 text-center">
+                                    <div class="flex justify-center"><i data-lucide="circle" class="w-4 h-4 text-milio-brand fill-milio-brand"></i></div>
+                                </td>
                             </tr>
+                            <!-- Accessibility Audit: X, X, O -->
                             <tr class="border-b border-gray-800 hover:bg-gray-900/50 transition-colors">
                                 <td class="py-4 px-4">Accessibility Audit</td>
-                                <td class="py-4 px-4 text-center">❌</td>
-                                <td class="py-4 px-4 text-center">❌</td>
-                                <td class="py-4 px-4 text-center">🔴</td>
+                                <td class="py-4 px-4 text-center">
+                                    <div class="flex justify-center"><i data-lucide="x" class="w-4 h-4 text-white"></i></div>
+                                </td>
+                                <td class="py-4 px-4 text-center">
+                                    <div class="flex justify-center"><i data-lucide="x" class="w-4 h-4 text-white"></i></div>
+                                </td>
+                                <td class="py-4 px-4 text-center">
+                                    <div class="flex justify-center"><i data-lucide="circle" class="w-4 h-4 text-milio-brand fill-milio-brand"></i></div>
+                                </td>
                             </tr>
+                            <!-- Ethno.: X, X, O -->
                             <tr class="border-b border-gray-800 hover:bg-gray-900/50 transition-colors">
                                 <td class="py-4 px-4">Ethno.</td>
-                                <td class="py-4 px-4 text-center">❌</td>
-                                <td class="py-4 px-4 text-center">❌</td>
-                                <td class="py-4 px-4 text-center">🔴</td>
+                                <td class="py-4 px-4 text-center">
+                                    <div class="flex justify-center"><i data-lucide="x" class="w-4 h-4 text-white"></i></div>
+                                </td>
+                                <td class="py-4 px-4 text-center">
+                                    <div class="flex justify-center"><i data-lucide="x" class="w-4 h-4 text-white"></i></div>
+                                </td>
+                                <td class="py-4 px-4 text-center">
+                                    <div class="flex justify-center"><i data-lucide="circle" class="w-4 h-4 text-milio-brand fill-milio-brand"></i></div>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
