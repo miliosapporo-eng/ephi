@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>eφ usability labo Service</title>
+    <title>eφ usability lab Service</title>
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Google Fonts: Jost (Latin) & Noto Sans JP (Japanese) -->
@@ -75,11 +75,13 @@
         <div class="container mx-auto px-6 flex justify-between items-center">
             <!-- ロゴに font-brand を適用 -->
             <h1 class="text-xl font-medium tracking-wide text-white font-brand">
-                <span class="font-bold text-milio-brand">eφ</span> usability labo
+                <span class="font-bold text-milio-brand">eφ</span> usability lab
             </h1>
             <nav>
                 <ul class="flex space-x-8 text-sm font-light text-gray-300 font-sans">
-                    <li><a href="#concept" class="hover:text-milio-brand transition-colors">Concept</a></li>
+                    <!-- Aboutを追加 -->
+                    <li><a href="#about" class="hover:text-milio-brand transition-colors">About</a></li>
+                    <li><a href="#persona" class="hover:text-milio-brand transition-colors">Persona</a></li>
                     <li><a href="#services" class="hover:text-milio-brand transition-colors">Services</a></li>
                     <li><a href="#contact" class="hover:text-milio-brand transition-colors">Contact</a></li>
                 </ul>
@@ -95,14 +97,139 @@
             <div class="container mx-auto px-6 text-center">
                 <!-- キャッチコピーを画像に置き換え -->
                 <div class="flex justify-center mb-10">
-                    <img src="images/Ephi-1600.png" alt="eφ usability labo" class="max-w-full h-auto w-[600px] object-contain">
+                    <img src="images/Ephi-1600.png" alt="eφ usability lab" class="max-w-full h-auto w-[70%] object-contain">
                 </div>
                 
-                <p class="text-sm md:text-base text-gray-300 max-w-2xl mx-auto leading-loose font-sans">
-                    私たちは「余白」にこそ着目すべき源があると考えます。<br>
-                    空虚の中にある一閃を拾うことで、全貌の再評価を行います。<br>
-                    <span class="font-brand text-milio-brand">eφ</span>（イー・ファイ）は人間中心設計に基づいて「気付き」を提供する<br>観察設計改善サービスです。
-                </p>
+                <!-- テキストエリア -->
+                <div class="text-sm md:text-base text-gray-300 max-w-2xl mx-auto leading-snug font-sans">
+                    <p class="mb-6">
+                        私たちは「余白」にこそ着目すべき源があると考えます。<br>
+                        空虚の中にある一閃を拾うことで全貌を再評価します。
+                    </p>
+                    <p>
+                        <span class="font-brand text-milio-brand">eφ</span>（イー・ファイ）は<br>
+                        HCDに基づいて「気付き」を提供する<br>
+                        観察設計改善サービスです。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section (Redesigned with Image & Layout) -->
+        <section id="about" class="py-32 bg-milio-black border-b border-gray-800 relative overflow-hidden">
+            <!-- 背景装飾 -->
+            <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-milio-brand/5 rounded-full blur-[100px] pointer-events-none translate-x-1/3 -translate-y-1/3"></div>
+
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="flex flex-col lg:flex-row gap-16 items-center">
+                    
+                    <!-- Left Side: Text Content -->
+                    <div class="w-full lg:w-1/2">
+                        <h3 class="text-4xl md:text-5xl text-white font-brand mb-12 tracking-wide leading-tight">
+                            What’s <span class="text-milio-brand">HCD</span>?<br>
+                            <span class="text-gray-500 text-2xl font-light italic">...and Usability?</span>
+                        </h3>
+
+                        <div class="space-y-10 font-sans text-gray-300 leading-loose text-sm md:text-base tracking-wide">
+                            <p>
+                                HCDとは "Human Centered Design" の略で、人間中心設計と訳されています。<br>
+                                HumanとはUserのことを指しており、<span class="text-white font-medium border-b border-milio-brand/40 pb-1">「実際にそのサービスやプロダクトを手にして使う人」</span><br>
+                                つまり、お客様のことを指します。
+                            </p>
+
+                            <p>
+                                どんなに作り手や提供者が「これはいいものだ」と作ったり売ったりしていても、<br>
+                                実際、使い手が上手く使えていなかったら、意味がないですよね。せっかくの思いや労力も報われませんよね。
+                            </p>
+
+                            <div class="bg-gray-900/50 border-l-2 border-milio-brand p-8 relative">
+                                <p class="text-white text-lg font-light mb-4">
+                                    そんな<span class="text-milio-brand font-medium">静かな悲劇</span>減らそうというのが、Usabilityです。
+                                </p>
+                                <p class="text-sm text-gray-400">
+                                    <span class="font-brand text-milio-brand">eφ</span>（イー・ファイ）はそのお手伝いを致します。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Side: Image Composition -->
+                    <div class="w-full lg:w-1/2 pl-0 lg:pl-12">
+                        <div class="relative">
+                            <!-- Main Image -->
+                            <div class="relative z-10 border border-gray-800 bg-gray-900">
+                                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop" alt="Meeting and Analysis" class="w-full h-auto object-cover opacity-80 hover:opacity-100 transition-opacity duration-700 grayscale">
+                            </div>
+                            
+                            <!-- Decorative Box -->
+                            <div class="absolute -bottom-6 -right-6 w-full h-full border border-milio-brand/20 z-0 hidden md:block"></div>
+                            
+                            <!-- Caption -->
+                            <div class="absolute bottom-4 left-4 bg-black/80 px-4 py-2 border-l-2 border-milio-brand z-20 backdrop-blur-sm">
+                                <p class="text-xs text-gray-300 font-sans tracking-widest">OBSERVATION & INSIGHT</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Persona Section (Updated: Target Personas only) -->
+        <section id="persona" class="py-24 bg-milio-black border-b border-gray-800">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-20">
+                    <span class="text-milio-brand font-brand tracking-widest text-sm block mb-2">FOR INSTANCE</span>
+                    <h3 class="text-3xl text-white font-brand mb-6">Our Personas</h3>
+                    <p class="text-gray-400 mt-4 font-sans text-sm max-w-2xl mx-auto leading-relaxed">
+                        例えば、eφはこのような方々のサポートをしたいと<br>
+                        「お客様像」を作っています。
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+                    <!-- Persona 1: Keisuke -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="w-40 h-40 rounded-full border border-gray-700 bg-gray-900 overflow-hidden mb-8 relative transition-all duration-500 group-hover:border-milio-brand">
+                            <div class="absolute inset-0 border border-milio-brand rounded-full opacity-0 group-hover:opacity-30 transition-opacity duration-500 transform scale-110 z-10"></div>
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80" alt="Keisuke" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <h4 class="text-2xl text-white font-brand mb-2">Keisuke (42)</h4>
+                        <p class="text-xs text-milio-brand uppercase tracking-widest mb-6 font-sans">Product Manager / Marketer</p>
+                        <p class="text-gray-400 text-sm leading-loose font-sans px-4">
+                            「KPIは改善したが、ユーザーが本当に満足しているか不安だ」<br>
+                            終わりのないABテストに疲弊し、数字の裏にある<br>“感情のロジック”を知りたい方。
+                        </p>
+                    </div>
+
+                    <!-- Persona 2: Ayaka -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="w-40 h-40 rounded-full border border-gray-700 bg-gray-900 overflow-hidden mb-8 relative transition-all duration-500 group-hover:border-milio-brand">
+                            <div class="absolute inset-0 border border-milio-brand rounded-full opacity-0 group-hover:opacity-30 transition-opacity duration-500 transform scale-110 z-10"></div>
+                            <img src="https://images.unsplash.com/photo-1573496359-136d4755be96?auto=format&fit=crop&w=400&q=80" alt="Ayaka" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <h4 class="text-2xl text-white font-brand mb-2">Ayaka (29)</h4>
+                        <p class="text-xs text-milio-brand uppercase tracking-widest mb-6 font-sans">Founder / UX Designer</p>
+                        <p class="text-gray-400 text-sm leading-loose font-sans px-4">
+                            「革新的なアイデアだが、独りよがりになっていないか？」<br>
+                            開発前の仮説検証や、プロトタイプ段階での<br>“致命的なズレ”を早期に回避したい方。
+                        </p>
+                    </div>
+
+                    <!-- Persona 3: Mamoru -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="w-40 h-40 rounded-full border border-gray-700 bg-gray-900 overflow-hidden mb-8 relative transition-all duration-500 group-hover:border-milio-brand">
+                            <div class="absolute inset-0 border border-milio-brand rounded-full opacity-0 group-hover:opacity-30 transition-opacity duration-500 transform scale-110 z-10"></div>
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80" alt="Mamoru" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <h4 class="text-2xl text-white font-brand mb-2">Mamoru (56)</h4>
+                        <p class="text-xs text-milio-brand uppercase tracking-widest mb-6 font-sans">CSR / Public Sector</p>
+                        <p class="text-gray-400 text-sm leading-loose font-sans px-4">
+                            「誰もが使えるサービスでありたい」<br>
+                            アクセシビリティ対応をコストではなく<br>“品質”と捉え、社会的責任を果たしたい方。
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -110,76 +237,13 @@
         <section id="services" class="py-24 bg-milio-black relative">
             <div class="container mx-auto px-6">
                 
-                <!-- === Plans Part (Moved to Top) === -->
-                
-                <!-- Introduction Message -->
-                <div class="text-center mb-20">
-                    <p class="text-lg md:text-xl text-white font-light leading-relaxed tracking-wide font-sans">
-                        出会いの目前で、商談の途中で、成約手前で...<br class="hidden md:inline">
-                        結ばれなかった「未来の顧客」を見つけ出し、<br class="hidden md:inline">
-                        不満のもとであった問題点をデザインし直します。
-                    </p>
-                </div>
-
-                <!-- Plans Heading -->
-                <h3 class="text-3xl font-light text-center mb-16 text-white font-brand">Plans</h3>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32 border-b border-gray-800 pb-24">
-                    <!-- TRIAL -->
-                    <div class="flex flex-col border border-gray-700 p-8 hover:border-milio-brand transition-colors duration-300 group">
-                        <div class="mb-6">
-                            <span class="text-xs font-bold tracking-widest text-milio-brand mb-2 block font-brand">DAY / TRIAL</span>
-                            <h4 class="text-xl font-medium text-white group-hover:text-milio-brand transition-colors font-brand">導入プラン</h4>
-                        </div>
-                        <p class="text-sm text-gray-400 mb-8 flex-grow font-sans">
-                            まずは率直な意見を聞きたい方へ。<br>
-                            ヒアリングと検証方法の提案。
-                        </p>
-                        <div class="pt-6 border-t border-gray-800">
-                            <p class="text-2xl font-light text-white font-brand">¥20,000 <span class="text-sm text-gray-500 font-sans">/ hour</span></p>
-                        </div>
-                    </div>
-
-                    <!-- STANDARD -->
-                    <div class="flex flex-col border border-milio-brand p-8 bg-milio-black relative transform md:-translate-y-4 shadow-lg shadow-black/50">
-                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                            <span class="bg-milio-brand text-milio-black text-xs px-3 py-1 font-bold tracking-widest uppercase font-brand">Recommended</span>
-                        </div>
-                        <div class="mb-6">
-                            <span class="text-xs font-bold tracking-widest text-milio-brand mb-2 block font-brand">WEEK / STANDARD</span>
-                            <h4 class="text-xl font-medium text-white font-brand">いったんプラン</h4>
-                        </div>
-                        <p class="text-sm text-gray-300 mb-8 flex-grow font-sans">
-                            仮説を立て、資産となる<br>
-                            ペルソナ・シナリオを構築。
-                        </p>
-                        <div class="pt-6 border-t border-gray-700">
-                            <p class="text-2xl font-light text-white font-brand">¥150,000 <span class="text-sm text-gray-500 font-sans">/ case</span></p>
-                        </div>
-                    </div>
-
-                    <!-- PRO -->
-                    <div class="flex flex-col border border-gray-700 p-8 hover:border-milio-brand transition-colors duration-300 group">
-                        <div class="mb-6">
-                            <span class="text-xs font-bold tracking-widest text-milio-brand mb-2 block font-brand">MONTH / PRO</span>
-                            <h4 class="text-xl font-medium text-white group-hover:text-milio-brand transition-colors font-brand">周回プラン</h4>
-                        </div>
-                        <p class="text-sm text-gray-400 mb-8 flex-grow font-sans">
-                            ほんかくてき！<br>
-                            データ収集・検証・改善のサイクル。
-                        </p>
-                        <div class="pt-6 border-t border-gray-800">
-                            <p class="text-2xl font-light text-white font-brand">¥500,000~ <span class="text-sm text-gray-500 font-sans">/ term</span></p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- === Services Details Part === -->
+                <!-- === Services Details Part (Moved to Top) === -->
                 
                 <!-- Services Heading -->
                 <h3 class="text-3xl font-light text-center mb-16 text-white font-brand">Services</h3>
                 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Services Grid: Added bottom border for separation -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32 border-b border-gray-800 pb-24">
                     <!-- Service 1 -->
                     <div class="group bg-milio-black p-8 border border-gray-700 hover:border-milio-brand transition-colors duration-300">
                         <div class="mb-4 text-milio-brand">
@@ -245,7 +309,64 @@
                             エスノメソドロジー的アプローチにより、ユーザーが意識せずに行っている日常的な実践や、相互作用の秩序を分析・記述します。
                         </p>
                     </div>
+                </div>
 
+                <!-- === Plans Part (Moved to Bottom) === -->
+                
+                <!-- Updated Structure: Subtitle -> Title -> Description (Consistent with other sections) -->
+                <div class="text-center mb-20">
+                    <span class="text-milio-brand font-brand tracking-widest text-sm block mb-2">PRICING</span>
+                    <h3 class="text-3xl text-white font-brand mb-6">Plans</h3>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- TRIAL -->
+                    <div class="flex flex-col border border-gray-700 p-8 hover:border-milio-brand transition-colors duration-300 group">
+                        <div class="mb-6">
+                            <span class="text-xs font-bold tracking-widest text-milio-brand mb-2 block font-brand">DAY / TRIAL</span>
+                            <h4 class="text-xl font-medium text-white group-hover:text-milio-brand transition-colors font-brand">導入プラン</h4>
+                        </div>
+                        <p class="text-sm text-gray-400 mb-8 flex-grow font-sans">
+                            まずは率直な意見を聞きたい方へ。<br>
+                            ヒアリングと検証方法の提案。
+                        </p>
+                        <div class="pt-6 border-t border-gray-800">
+                            <p class="text-2xl font-light text-white font-brand">¥20,000 <span class="text-sm text-gray-500 font-sans">/ hour</span></p>
+                        </div>
+                    </div>
+
+                    <!-- STANDARD -->
+                    <div class="flex flex-col border border-milio-brand p-8 bg-milio-black relative transform md:-translate-y-4 shadow-lg shadow-black/50">
+                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                            <span class="bg-milio-brand text-milio-black text-xs px-3 py-1 font-bold tracking-widest uppercase font-brand">Recommended</span>
+                        </div>
+                        <div class="mb-6">
+                            <span class="text-xs font-bold tracking-widest text-milio-brand mb-2 block font-brand">WEEK / STANDARD</span>
+                            <h4 class="text-xl font-medium text-white font-brand">いったんプラン</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 mb-8 flex-grow font-sans">
+                            仮説を立て、資産となる<br>
+                            ペルソナ・シナリオを構築。
+                        </p>
+                        <div class="pt-6 border-t border-gray-700">
+                            <p class="text-2xl font-light text-white font-brand">¥150,000 <span class="text-sm text-gray-500 font-sans">/ case</span></p>
+                        </div>
+                    </div>
+
+                    <!-- PRO -->
+                    <div class="flex flex-col border border-gray-700 p-8 hover:border-milio-brand transition-colors duration-300 group">
+                        <div class="mb-6">
+                            <span class="text-xs font-bold tracking-widest text-milio-brand mb-2 block font-brand">MONTH / PRO</span>
+                            <h4 class="text-xl font-medium text-white group-hover:text-milio-brand transition-colors font-brand">周回プラン</h4>
+                        </div>
+                        <p class="text-sm text-gray-400 mb-8 flex-grow font-sans">
+                            ほんかくてき！<br>
+                            データ収集・検証・改善のサイクル。
+                        </p>
+                        <div class="pt-6 border-t border-gray-800">
+                            <p class="text-2xl font-light text-white font-brand">¥500,000~ <span class="text-sm text-gray-500 font-sans">/ term</span></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
